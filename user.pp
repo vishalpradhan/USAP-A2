@@ -1,56 +1,56 @@
-class usergroup {
+class user {
 	#creating group sysadmin with groupid
-	group{ ‘sysadmin’:
+	group{ 'sysadmin':
 	ensure => present,
-	gid =>’500’,
+	gid =>'500',
 
 	}
 
 	#creating group cars with their groupId
-	group{ ‘cars’:
+	group{ 'cars':
 	ensure => present,
-	gid =>’501’,
+	gid =>'501',
 	}
 
 	#creating group trucks with their groupId
-	group{ ‘trucks’:
+	group{ 'trucks':
 	ensure => present,
-	gid =>’502’,
+	gid =>'502',
 	}
 
 	#creating group ambulances with their groupId
-	group{ ‘ambulances’:
+	group{ 'ambulances':
 	ensure => present,
-	gid =>’503’,
+	gid =>'503',
 	}
 	
 	#creating user becca with their respective fields
-	user { ‘becca’:
+	user { 'becca':
 	ensure => present,
-	home => ‘/home/becca’,
+	home => '/home/becca',
 	managehome => true,
-	uid => ‘10010077’,
-	groups => [‘sysadmin’, ‘cars’],
-	shell => ‘/bin/bash’,
+	uid => '10010077',
+	groups => ['sysadmin', 'cars'],
+	shell => '/bin/bash',
 	}
 
 	#creating user fred with their respective fields
-	user { ‘fred’:
+	user { 'fred':
 	ensure => present,
-	home => ‘/home/fred’,
+	home => '/home/fred',
 	managehome => true,
-	uid => ‘10020077’,
-	groups => [‘trucks’, ‘cars’],
-	shell => ‘/bin/csh’,
+	uid => '10020077',
+	groups => ['trucks', 'cars'],
+	shell => '/bin/csh',
 	}
 
 	#creating user wilma with theor respective fields
-	user { ‘wilma’:
+	user { 'wilma':
 	ensure => present,
-	home => ‘/home/wilma’,
+	home => '/home/wilma',
 	managehome => true,
-	uid => ‘10030077’,
-	groups => [‘trucks’, ‘cars’, ‘ambulances’],
+	uid => '10030077',
+	groups => ['trucks', 'cars', 'ambulances'],
 	}
 
 
