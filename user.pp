@@ -1,6 +1,6 @@
 class user {
-	include packages
-
+	require packages
+	
 	group{ 'sysadmin':
 	ensure => present,
 	gid =>'500',
@@ -37,7 +37,7 @@ class user {
         managehome => true,
         uid => '10020077',
         groups => ['trucks', 'cars'],
-        shell => '/bin/csh',
+        shell => '/bin/bsd-csh',
         }
 
         user { 'wilma':
