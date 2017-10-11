@@ -1,171 +1,63 @@
 
 class packages{
-        package{ 'httpd':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-	service { 'httpd':
-	enable => true,
-	}
-
-	file { 'index.html':
-	path => '/var/www/html/index.html',
-	content => 'package exists',
-	require => Package['httpd'],
-	ensure => file,
-	}
-
-        package{ 'openssh':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'openssh':
-        enable => true,
-        }
-
-
-        package { 'mysql-server':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-	service { 'mysql-server':
-        enable => true,
-        }
-
-
-        package { 'mysql':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'mysql':
-        enable => true,
-        }
-
-        package { 'vncserver':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'vncserver':
-        enable => true,
-        }
-
-
-        package { 'tmux':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'tmux':
-        enable => true,
-        }
-
-
-        package { 'dia2code':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'dia2code':
-        enable => true,
-        }
-
-
-        package { 'lynx':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'lynx':
-        enable => true,
-        }
-
-
-        package { 'gcc':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'gcc':
-        enable => true,
-        }
-
-
-        package { 'gdb':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'gdb':
-        enable => true,
-        }
-
-
-        package { 'cgdb':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'cgdb':
-        enable => true,
-        }
-
-        package { 'vim':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-	
-	service { 'vim':
-        enable => true,
-        }
-
-
-        package { 'emacs':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'emacs':
-        enable => true,
-        }
-
-        package { 'sshfs':
-        ensure => 'installed',
-        #enable => true,
-
-        }
-
-	service { 'sshfs':
-        enable => true,
-        }
-
-	package { 'csh':
+	package{ 'wget':
 	ensure => 'installed',
-	#enable => true,
+	provider => 'yum',
 	}
 
-	service { 'csh':
-        enable => true,
-        }
+	#mandatory requirement for yum
+	exec{ 'getDeps':
+	onlyif => '/usr/bin/yum-config-manager',
+	command => '/usr/bin/yum-config-manager --enable rhui-REGION-rhel-server-optional',
+	}	
 
-	#package { 'pupet-lint':
-	#ensure => '1.1.0',
-	#provider => 'gem',
-	#}
+	#install the packages that are available on yum 
+	$packages = ['openssh-server', 'httpd', 'mysql', 'tigervnc-server', 'tmux', 'lynx', 'gcc', 'gdb', 'vim', 'emacs', 'csh',]
+
+	package{ $packages :
+	ensure => 'installed',
+	provider => 'yum',
+	}
+
+	#now installing the packages that are not in yum repository
+	#install CGDB
+	
+	package{ 'cgdb':
+	ensure => 'installed',
+	source => 'ftp://mirror.switch.ch/pool/4/mirror/epel/7/x86_64/c/cgdb-0.6.8-1.el7.x86_64.rpm',
+	provider => 'rpm',
+	}
+
+	#install sshfs
+	package { 'glib*':
+	ensure => 'installed',
+	provider => 'yum',
+	}->
+	package{ 'fuse*':
+	ensure => 'installed',
+	provider => 'yum',
+	}->
+	package{ 'fuse-sshfs':
+	ensure => 'installed',
+	source => 'ftp://195.220.108.108/linux/dag/redhat/el7/en/x86_64/dag/RPMS/fuse-sshfs-2.5-1.el7.rf.x86_64.rpm',
+	provider => 'rpm',
+	}
+	
+	#install dia2code(need to get a package libxml to do so)
+	package{ 'libxml2.so.2':
+	ensure => 'installed',
+	}->
+	package{ 'dia2code':
+	ensure => 'installed',
+	source => 'https://downloads.sourceforge.net/project/dia2code/dia2code/0.8.3/dia2code-0.8.3-3.1.i586.rpm?r=http%3A%2F%2Fdia2code.sourceforge.net%2Fdownload.html&ts=1507292790&use_mirror=ncu',
+	provider => 'rpm',
+	}
+
+	#install sql server
+	package{ 'mysql57-community-release':
+	ensure => 'installed',
+	source => 'https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm',
+	provider => 'rpm',
+	}
 }
 
