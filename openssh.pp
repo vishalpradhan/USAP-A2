@@ -12,7 +12,7 @@ class openssh{
 	mode => '0600',
 	owner => 'root',
 	group => 'root',
-	source => '/etc/puppetlab/code/environment/production/manifest/configurationOverWrite/sshd_config',
+	source => '/etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/sshd_config',
 	require => Package['openssh-server'],
 	#content => template('ssh/sshd_config.erb'),
 	}
