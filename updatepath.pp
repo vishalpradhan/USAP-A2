@@ -8,11 +8,11 @@ class updatepath{
 	}
 
 	#becca sudoer
-	exec{ 'becca_sudo':
-	command => '/usr/sbin/usermod -aG root becca',#Adds to the Group
-	}
+	#exec{ 'becca_sudo':
+	#command => '/usr/sbin/usermod -aG root becca',#Adds to the Group
+	#}
 
-	$password = file('/etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/ssh_pass')
+	#$password = file('/etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/ssh_pass')
 	
 	#Mount titan to becca and use sshfs to connect
 	exec{ 'becca_titan':
