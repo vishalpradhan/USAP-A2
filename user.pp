@@ -52,7 +52,7 @@ class user {
         uid => '10030077',
         groups => ['trucks', 'cars', 'ambulances'],
 	shell => '/bin/bash',
-	purge_ssh_key => true,
+	purge_ssh_keys => true,
         }
 
 	#ssh_auth_for_wilma
