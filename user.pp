@@ -1,6 +1,7 @@
 class user {
 	require packages
 	
+	#Creating different groups 	
 	group{ 'sysadmin':
 	ensure => present,
 	gid =>'500',
@@ -22,11 +23,13 @@ class user {
 	gid =>'503',
 	}
 
-	 user { 'becca':
+	#Creating three different users 
+	user { 'becca':
         ensure => present,
         home => '/home/becca',
         managehome => true,
-        uid => '10010077',
+        password => '$1$1cIWPs7b$JxeyaJ0JLbUQ7avmrFyx51', #the password is "password"
+	uid => '10010077',
         groups => ['sysadmin', 'cars'],
         shell => '/bin/bash',
         }
@@ -35,17 +38,21 @@ class user {
         ensure => present,
         home => '/home/fred',
         managehome => true,
+	password => '$1$1cIWPs7b$JxeyaJ0JLbUQ7avmrFyx51', #the password is "password"
         uid => '10020077',
         groups => ['trucks', 'cars'],
-        shell => '/bin/bsd-csh',
+        shell => '/bin/csh',
         }
 
         user { 'wilma':
         ensure => present,
         home => '/home/wilma',
         managehome => true,
+	password => '$1$1cIWPs7b$JxeyaJ0JLbUQ7avmrFyx51', #the password is "password"
         uid => '10030077',
         groups => ['trucks', 'cars', 'ambulances'],
+	shell => '/bin/bash',
+	purge_ssh_key => true,
         }
 
 	#ssh_auth_for_wilma
