@@ -9,7 +9,7 @@ class openssh{
 	#configuration to overwrite default sshd configuration with custom one
 	file{ '/etc/ssh/sshd_config':
 	notify => Service['sshd'],
-	mode => '0600',
+	mode => '077',
 	owner => 'root',
 	group => 'root',
 	source => '/etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/sshd_config',
