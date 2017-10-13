@@ -5,14 +5,9 @@
       owner  => 'root',
       mode   => '0600',
     }
-    #initial setup of the httpd config file
-    ->service{ 'httpd':
-      ensure => running,
-      enable => true,
-    }
 
     #Over writing the default httpd.conf file with the custome one
-    ~>file{ '/etc/httpd/conf/httpd.conf':
+    ->file{ '/etc/httpd/conf/httpd.conf':
       ensure  => present,
       #notify  => Service['httpd'],
       mode    => '0777',
@@ -20,5 +15,12 @@
       group   => 'root',
       source  => '/etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/httpd.conf',
       require => Package['httpd'],
+    }
+
+    #initial setup of the httpd config file
+    ->service{ 'httpd':
+      ensure    => running,
+      enable    => true,
+      subscribe => File['/etc/httpd/conf/httpd.conf'],
     }
   }

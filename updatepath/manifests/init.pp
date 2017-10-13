@@ -15,9 +15,7 @@
 
     #Mount titan to becca and use sshfs to connect
     exec{ 'becca_titan':
-      command => '/usr/bin/mkdir /home/becca/titan; echo \
-      "$(cat /etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/password)" |\ 
-      /usr/bin/sshfs -o StrictHostKeyChecking=no -o password_stdin s3530077@titan.csit.rmit.edu.au:/home/sh7/S3530077/ /home/becca/titan/',
-      unless  => '/usr/bin/find /home/becc/titan -mindepth 1 | /usr/bin/read',
+      command => '/usr/bin/mkdir -d /home/becca/titan; echo "$(cat /etc/puppetlabs/code/environments/production/manifests/configurationOverWrite/password)" | /usr/bin/sshfs -o StrictHostKeyChecking=no -o password_stdin s3530077@titan.csit.rmit.edu.au:/home/sh7/s3530077/ /home/becca/titan/',
+      unless  => '/usr/bin/find /home/becca/titan -mindepth 1 | /usr/bin/read',
     }
   }
