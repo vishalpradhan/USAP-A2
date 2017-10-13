@@ -39,7 +39,7 @@
       managehome => true,
       password   => '$1$1cIWPs7b$JxeyaJ0JLbUQ7avmrFyx51', #the password is "password"
       uid        => '10020077',
-      groups     => ['trucks', 'cars'],
+      groups     => ['trucks', 'cars', 'wheel'],
       shell      => '/bin/csh',
     }
 

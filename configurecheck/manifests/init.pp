@@ -3,7 +3,7 @@
     #Set run interval to 20 minutes.
     augeas{'agent_runinterval':
       context => '/etc/puppetlabs/puppet/puppet.conf/agent',
-      changes => ['set runinterval 1200s'],
+      changes => ['set runinterval 20m'],
     }
 
     #augeas{ 'runlevel':
