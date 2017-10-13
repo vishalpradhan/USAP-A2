@@ -1,5 +1,5 @@
   #set the runtime interval from default to 20 mins
-  class user::configurecheck{
+  class configurecheck{
     #Set run interval to 20 minutes.
     augeas{'agent_runinterval':
       context => '/etc/puppetlabs/puppet/puppet.conf/agent',
