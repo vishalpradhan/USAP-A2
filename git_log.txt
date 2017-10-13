@@ -1,0 +1,33 @@
+af63883 was Cloud User, 38 minutes ago, message: minute changes made
+9c48d47 was Cloud User, 3 hours ago, message: certain changes made to the service and subscribed
+2f05bb3 was Cloud User, 3 hours ago, message: nothing changed
+4890f66 was Cloud User, 3 hours ago, message: changed port from 80 to 8008
+b2c03a0 was Cloud User, 18 hours ago, message: puppet-lint style coding
+d5c3383 was Cloud User, 18 hours ago, message: puppet-lint style coding
+161ae93 was Cloud User, 18 hours ago, message: puppet-lint style coding
+f474125 was Cloud User, 18 hours ago, message: puppet-lint style coding
+e68fcef was Cloud User, 18 hours ago, message: puppet-lint style coding
+c9eedb4 was Cloud User, 18 hours ago, message: puppet-lint style coding
+65d6679 was Cloud User, 18 hours ago, message: puppet-lint style coding
+1284514 was Cloud User, 18 hours ago, message: puppet-lint style coding
+87eb0b3 was Cloud User, 18 hours ago, message: changed the listening port on the httpd.conf file
+8fb96bf was Cloud User, 2 days ago, message: configuration overwriting file added
+016b1fa was Cloud User, 2 days ago, message: changed permission to 777
+cef8355 was Cloud User, 2 days ago, message: Mounting not working
+4b22664 was Cloud User, 2 days ago, message: added sudoer becca and mounted titan on to becca
+9178009 was Cloud User, 2 days ago, message: Added Httpd.config custome replacement file
+ea9eada was Cloud User, 2 days ago, message: Fixed syntax error
+33752a9 was Cloud User, 2 days ago, message: edited openssh file to overwrite the default configuration
+ef72da6 was Cloud User, 2 days ago, message: Added new dependencies for the packages
+5f97249 was Cloud User, 2 days ago, message: Fixed syntax error
+cfd6b47 was Cloud User, 2 days ago, message: added password for users in user.pp
+9100acc was Cloud User, 3 days ago, message: additional changes to configurecheck.pp
+09f3b36 was Cloud User, 3 days ago, message: added messageoutput.pp, updatepath.pp, host.pp and some extra edition
+38cd046 was Cloud User, 6 days ago, message: removed unwanted files
+466c0d9 was Cloud User, 6 days ago, message: added configurecheck.pp file and edited the user.pp and packages.pp file
+f8df245 was vishalpradhan, 8 days ago, message: Create README.md
+5965314 was Cloud User, 10 days ago, message: Merge branch 'master' of jupiter.csit.rmit.edu.au:s3530077-usap-a2
+ddc9263 was Cloud User, 10 days ago, message: ncluded user and packages
+f6051b3 was Cloud User, 2 weeks ago, message: class name and class made the same
+9b975cc was Cloud User, 2 weeks ago, message: file for adding user
+51505cc was Cloud User, 3 weeks ago, message: test commit
