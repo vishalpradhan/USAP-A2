@@ -1,16 +1,17 @@
-af63883 was Cloud User, 38 minutes ago, message: minute changes made
-9c48d47 was Cloud User, 3 hours ago, message: certain changes made to the service and subscribed
-2f05bb3 was Cloud User, 3 hours ago, message: nothing changed
-4890f66 was Cloud User, 3 hours ago, message: changed port from 80 to 8008
-b2c03a0 was Cloud User, 18 hours ago, message: puppet-lint style coding
-d5c3383 was Cloud User, 18 hours ago, message: puppet-lint style coding
-161ae93 was Cloud User, 18 hours ago, message: puppet-lint style coding
-f474125 was Cloud User, 18 hours ago, message: puppet-lint style coding
-e68fcef was Cloud User, 18 hours ago, message: puppet-lint style coding
-c9eedb4 was Cloud User, 18 hours ago, message: puppet-lint style coding
-65d6679 was Cloud User, 18 hours ago, message: puppet-lint style coding
-1284514 was Cloud User, 18 hours ago, message: puppet-lint style coding
-87eb0b3 was Cloud User, 18 hours ago, message: changed the listening port on the httpd.conf file
+1f0ecc2 was Cloud User, 47 minutes ago, message: final draft commit
+af63883 was Cloud User, 2 hours ago, message: minute changes made
+9c48d47 was Cloud User, 5 hours ago, message: certain changes made to the service and subscribed
+2f05bb3 was Cloud User, 5 hours ago, message: nothing changed
+4890f66 was Cloud User, 5 hours ago, message: changed port from 80 to 8008
+b2c03a0 was Cloud User, 20 hours ago, message: puppet-lint style coding
+d5c3383 was Cloud User, 20 hours ago, message: puppet-lint style coding
+161ae93 was Cloud User, 20 hours ago, message: puppet-lint style coding
+f474125 was Cloud User, 20 hours ago, message: puppet-lint style coding
+e68fcef was Cloud User, 20 hours ago, message: puppet-lint style coding
+c9eedb4 was Cloud User, 20 hours ago, message: puppet-lint style coding
+65d6679 was Cloud User, 20 hours ago, message: puppet-lint style coding
+1284514 was Cloud User, 20 hours ago, message: puppet-lint style coding
+87eb0b3 was Cloud User, 20 hours ago, message: changed the listening port on the httpd.conf file
 8fb96bf was Cloud User, 2 days ago, message: configuration overwriting file added
 016b1fa was Cloud User, 2 days ago, message: changed permission to 777
 cef8355 was Cloud User, 2 days ago, message: Mounting not working
